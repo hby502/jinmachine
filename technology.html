@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="锦越机械技术优势 — 双桶分子筛 vs 蜂巢式对比，远程控制，能耗监测">
+  <title>技术优势 | JIN MACHINE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* 本页专属样式 — 保留 Codex 设计的精华 */
+    .tech-hero-box {
+      background: linear-gradient(135deg, rgba(13,148,136,.12), rgba(13,148,136,.03));
+      border: 1px solid rgba(13,148,136,.18);
+      border-radius: 18px;
+      padding: 28px 28px 26px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .tech-hero-box::after {
+      content: "";
+      position: absolute;
+      inset: auto -60px -70px auto;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13,148,136,.18), rgba(13,148,136,0) 68%);
+      pointer-events: none;
+    }
+    .tech-hero-box h1 { margin: 10px 0 8px; position: relative; z-index: 1; }
+    .tech-hero-box .lead { color: var(--color-text-light); max-width: 760px; position: relative; z-index: 1; font-size: 1.02rem; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: var(--color-accent); font-weight: 700; text-transform: uppercase;
+      font-size: .9rem; position: relative; z-index: 1;
+    }
+    .eyebrow::before {
+      content: ""; width: 42px; height: 2px;
+      background: var(--color-accent); border-radius: 999px;
+    }
+
+    .tech-section {
+      background: var(--color-bg); border: 1px solid var(--color-border);
+      border-radius: 14px; box-shadow: var(--shadow-md); overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .tech-section-header {
+      padding: 20px 24px 14px; border-bottom: 1px solid var(--color-border);
+      background: linear-gradient(180deg, rgba(13,148,136,.05), transparent);
+    }
+    .tech-section-header h2 { margin-bottom: 6px; }
+    .tech-section-header p { color: var(--color-text-light); font-size: .96rem; margin: 0; }
+
+    .compare-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+    .compare-table th, .compare-table td { padding: 16px 18px; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; }
+    .compare-table thead th { background: var(--color-accent-surface); color: var(--color-primary-dark); font-weight: 700; font-size: .95rem; }
+    .compare-table tbody tr:nth-child(odd) td { background: #fcfefe; }
+    .compare-table tbody tr:hover td { background: rgba(13,148,136,.035); }
+    .tech-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 92px; padding: 4px 10px; border-radius: 999px;
+      background: var(--color-accent-light); color: var(--color-primary-dark);
+      font-size: .82rem; font-weight: 700;
+    }
+
+    .tech-feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; padding: 20px 24px; }
+    .tech-feature-card {
+      border: 1px solid var(--color-border); background: linear-gradient(180deg, #fff, #f8fbfb);
+      border-radius: 12px; padding: 18px 16px;
+    }
+    .tech-feature-card .num {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(13,148,136,.1); color: var(--color-accent);
+      display: grid; place-items: center; font-size: 1.2rem; font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .tech-feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .tech-feature-card p { color: var(--color-text-light); font-size: .95rem; margin: 0; }
+
+    .tech-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+    .tech-stat {
+      background: linear-gradient(180deg, #fff, #f6fbfb); border: 1px solid var(--color-border);
+      border-radius: 16px; padding: 22px 20px; box-shadow: var(--shadow-md);
+      position: relative; overflow: hidden;
+    }
+    .tech-stat::before {
+      content: ""; position: absolute; inset: 0 auto auto 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--color-accent), rgba(13,148,136,.25));
+    }
+    .tech-stat-label { display: block; color: var(--color-text-light); font-size: .92rem; margin-bottom: 10px; font-weight: 600; }
+    .tech-stat-value { color: var(--color-primary-dark); font-size: clamp(1.6rem, 2vw, 2.2rem); line-height: 1.1; font-weight: 800; }
+    .tech-stat-desc { margin-top: 10px; color: var(--color-text-light); font-size: .95rem; }
+
+    @media (max-width: 900px) {
+      .tech-feature-grid, .tech-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .tech-feature-grid, .tech-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">JIN MACHINE</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">首页</a>
+      <a href="products.html">产品中心</a>
+      <a href="technology.html" class="active">技术优势</a>
+      <a href="cases.html">应用案例</a>
+      <a href="about.html">关于我们</a>
+      <a href="contact.html">联系我们</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>技术优势</h1>
+    <p>双桶分子筛 vs 蜂巢式 — 为什么我们的路线更优</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- 对比表 -->
+    <div class="tech-section">
+      <div class="tech-section-header">
+        <h2>双桶分子筛 vs 蜂巢式除湿干燥机</h2>
+        <p>完整技术对比，快速判断两种方案在除湿性能、可靠性和适用场景上的差异。</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th style="width:18%">对比项</th><th>双桶分子筛</th><th>蜂巢式除湿干燥机</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>除湿核心</td><td><strong>球状分子筛</strong></td><td>粉状分子筛</td></tr>
+            <tr><td>结构形式</td><td>圆柱状容器 × 2</td><td>圆柱状容器 × 1</td></tr>
+            <tr><td>工作方式</td><td>双桶切换，交替使用，保证连续稳定除湿</td><td>同步带牵引，绕中轴转动</td></tr>
+            <tr><td>露点表现</td><td><strong style="color:var(--color-accent);">-80℃</strong>，适合对含水率要求极高的工况</td><td>恒定 -40℃，但不能长期保持性能</td></tr>
+            <tr><td>运行可靠性</td><td>全方位故障检测，寿命长，可维护更换</td><td>长期运行可能风化、碎裂、粉化</td></tr>
+            <tr><td>适用场景</td><td>适合大产能、低含水率要求高的生产环境</td><td>适合小产能、含水率要求低的应用</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="padding:24px;text-align:center;">
+        <img src="images/comparison-chart.png" alt="分子筛 vs 蜂巢对比图" style="max-width:100%;border-radius:12px;">
+      </div>
+    </div>
+
+    <!-- 远程控制 -->
+    <div class="tech-section">
+      <div class="tech-section-header">
+        <h2>远程控制功能</h2>
+        <p>从监控、巡查到能耗追溯，形成一套持续在线的管理闭环。</p>
+      </div>
+      <div class="tech-feature-grid">
+        <div class="tech-feature-card">
+          <div class="num">01</div>
+          <h3>27+ 点位实时监控</h3>
+          <p>关键运行数据持续采集，状态变化及时可见。</p>
+        </div>
+        <div class="tech-feature-card">
+          <div class="num">02</div>
+          <h3>多终端同步查看</h3>
+          <p>笔记本、手机、大屏均可访问，现场与远程并行管理。</p>
+        </div>
+        <div class="tech-feature-card">
+          <div class="num">03</div>
+          <h3>工程师 24h 巡查</h3>
+          <p>全天候巡视设备运行，提前发现异常降低停机风险。</p>
+        </div>
+        <div class="tech-feature-card">
+          <div class="num">04</div>
+          <h3>能耗可查可追溯</h3>
+          <p>历史能耗记录可回溯，便于优化策略与成本核算。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 数据卡片 -->
+    <div class="tech-stats">
+      <div class="tech-stat">
+        <span class="tech-stat-label">年省电费</span>
+        <div class="tech-stat-value">6-7 万元</div>
+        <div class="tech-stat-desc">长期运行场景下，节能收益更直观。</div>
+      </div>
+      <div class="tech-stat">
+        <span class="tech-stat-label">稳定露点</span>
+        <div class="tech-stat-value">-80℃</div>
+        <div class="tech-stat-desc">面向高标准低含水率需求，深度除湿能力。</div>
+      </div>
+      <div class="tech-stat">
+        <span class="tech-stat-label">远程守护</span>
+        <div class="tech-stat-value">24h</div>
+        <div class="tech-stat-desc">持续在线监测，设备状态始终可见可控。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>JIN <span class="text-accent">MACHINE</span></h4><p>专注双桶分子筛除湿干燥技术。<br>露点-80℃ · 远程控制 · 能耗监测。</p></div>
+      <div><h4>快速导航</h4><a href="products.html">产品中心</a><a href="technology.html">技术优势</a><a href="cases.html">应用案例</a><a href="about.html">关于我们</a></div>
+      <div><h4>产品系列</h4><a href="products.html">Bluebaby 系列</a><a href="products.html">TPU 专用系列</a><a href="products.html">膜线系列</a><a href="products.html">定制系列</a></div>
+      <div><h4>联系方式</h4><p>📞 电话咨询<br>📧 邮件联系<br>📍 工厂地址<br>💬 微信咨询</p></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 JIN MACHINE. All rights reserved.</span><span><a href="https://beian.miit.gov.cn/">备案号：备案中</a></span></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
