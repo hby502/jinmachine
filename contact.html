@@ -43,15 +43,12 @@
       <!-- 表单 -->
       <div>
         <h3 class="mb-3">在线留言</h3>
-        <form class="contact-form" id="contactForm" action="https://formsubmit.co/el/你的邮箱地址" method="POST">
-          <!-- 隐藏配置：提交后跳转回联系页 + 关闭验证码 -->
-          <input type="hidden" name="_next" value="https://hou-the-visionary.gitee.io/jinmachine/contact.html?sent=1">
-          <input type="hidden" name="_subject" value="【JIN MACHINE】新客户询盘">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="text" name="姓名" placeholder="您的姓名 *" required>
-          <input type="tel" name="手机号码" placeholder="手机号码 *" required>
-          <input type="text" name="公司名称" placeholder="公司名称">
-          <select name="物料类型" required>
+        <form class="contact-form" id="contactForm" novalidate>
+          <input type="text" name="name" id="inqName" placeholder="您的姓名 *（中文/英文）" required>
+          <input type="tel" name="phone" id="inqPhone" placeholder="手机号码 *（如 13800138000）" required>
+          <input type="email" name="email" id="inqEmail" placeholder="联系邮箱（选填，方便我们回复）">
+          <input type="text" name="company" id="inqCompany" placeholder="公司名称（仅中文，如 某某塑料有限公司）">
+          <select name="materialType" id="inqMaterial" required>
             <option value="">选择物料类型 *</option>
             <option value="PET">PET</option>
             <option value="R-PET">R-PET</option>
@@ -63,7 +60,7 @@
             <option value="PMMA">PMMA</option>
             <option value="other">其他物料</option>
           </select>
-          <select name="产能需求">
+          <select name="capacity" id="inqCapacity">
             <option value="">预计产能需求</option>
             <option value="100-300">100-300 kg/h</option>
             <option value="300-500">300-500 kg/h</option>
@@ -71,40 +68,41 @@
             <option value="800+">800 kg/h 以上</option>
             <option value="unknown">不确定，需要评估</option>
           </select>
-          <textarea name="需求描述" placeholder="请描述您的需求：物料特性、初始含水率、目标含水率、场地条件等"></textarea>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px;">提交需求 →</button>
+          <textarea name="message" id="inqMessage" placeholder="需求描述（选填）：物料特性、初始含水率、目标含水率、场地条件等"></textarea>
+          <div id="formError" style="display:none;color:#EF4444;font-size:.9rem;margin-bottom:12px;"></div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;justify-content:center;font-size:1rem;padding:16px;">提交需求 →</button>
         </form>
       </div>
 
       <!-- 联系信息 -->
       <div class="contact-info">
         <h3 class="mb-3">联系方式</h3>
-        <div class="contact-item">
+        <div class="contact-item" data-copy="13773295829" data-label="电话">
           <div class="icon">📞</div>
           <div class="contact-item-text">
             <strong>电话咨询</strong>
-            <span>请拨打销售热线</span>
+            <span class="contact-value">13773295829</span>
           </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item" data-copy="13773295829" data-label="微信">
           <div class="icon">💬</div>
           <div class="contact-item-text">
             <strong>微信咨询</strong>
-            <span>扫描二维码添加微信<br>发送物料信息即可获取方案</span>
+            <span class="contact-value">添加手机号 13773295829 即可添加微信<br>发送物料信息即可获取方案</span>
           </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item" data-copy="3381641673@qq.com" data-label="邮箱">
           <div class="icon">📧</div>
           <div class="contact-item-text">
             <strong>邮件联系</strong>
-            <span>发送产品需求至邮箱<br>我们将在24小时内回复</span>
+            <span class="contact-value">3381641673@qq.com<br>我们将在24小时内回复</span>
           </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-item" data-copy="珍珠南路65号南京市浦口区" data-label="地址">
           <div class="icon">📍</div>
           <div class="contact-item-text">
             <strong>工厂地址</strong>
-            <span>欢迎预约参观工厂<br>现场验证干燥性能</span>
+            <span class="contact-value">珍珠南路65号南京市浦口区<br>欢迎预约参观，现场验证干燥性能</span>
           </div>
         </div>
 
@@ -147,7 +145,7 @@
       </div>
       <div>
         <h4>联系方式</h4>
-        <p>📞 电话咨询<br>📧 邮件联系<br>📍 工厂地址<br>💬 微信咨询</p>
+        <p>📞 13773295829<br>📧 3381641673@qq.com<br>📍 珍珠南路65号南京市浦口区<br>💬 微信同号</p>
       </div>
     </div>
     <div class="footer-bottom">

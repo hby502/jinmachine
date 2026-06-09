@@ -290,6 +290,15 @@ h3 { font-size: 1.25rem; }
 .case-card:hover { border-color: var(--color-accent); box-shadow: var(--shadow-md); }
 .case-card-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
 .case-logo { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--color-accent-surface); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .85rem; color: var(--color-accent); }
+.case-photo {
+  width: 92px;
+  height: 68px;
+  flex: 0 0 92px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid rgba(13,148,136,.35);
+  box-shadow: var(--shadow-xs);
+}
 .case-card h3 { font-size: 1.1rem; }
 .case-company { font-size: .85rem; color: var(--color-accent); font-weight: 600; }
 .case-card p { font-size: .9rem; color: var(--color-text-light); line-height: 1.7; }
@@ -464,4 +473,62 @@ h3 { font-size: 1.25rem; }
   .page-hero { padding: 48px 0; }
   .tabs { gap: 2px; }
   .tab-btn { padding: 10px 14px; font-size: .82rem; }
+}
+
+/* ============================================================
+   联系方式 — 点击复制
+   ============================================================ */
+.contact-item {
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  border-radius: var(--radius-md);
+  padding: 16px;
+  position: relative;
+}
+.contact-item:hover {
+  background: #f0faf9;
+  transform: translateX(4px);
+}
+.contact-item:active {
+  transform: scale(.98);
+}
+.contact-item .contact-value {
+  color: var(--color-text);
+  font-weight: 500;
+}
+/* 点击后的复制提示 */
+.contact-item .copy-hint {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: .75rem;
+  color: var(--color-primary, #0D9488);
+  opacity: 0;
+  transition: opacity .2s;
+  pointer-events: none;
+}
+
+/* Toast 通知 */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #042F2E;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: .95rem;
+  z-index: 9999;
+  animation: toastIn .3s ease, toastOut .3s ease 1.7s forwards;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes toastOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
